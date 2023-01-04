@@ -8,8 +8,8 @@ contract SaveUserBalance {
     address public owner = msg.sender;
 
     // function that allows users to send real ETH deposits to the contract
-    function deposit(uint256 amount) public payable {
-        balances[msg.sender] += amount;
+    function deposit() public payable {
+        balances[msg.sender] += msg.value;
     }
 
     // function that searches for the user balance inside the balance mapping and returns the balance of whoever is calling the contract
